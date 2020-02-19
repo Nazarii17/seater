@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Message {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
     @Column(name = "text")
@@ -30,7 +30,7 @@ public class Message {
         this.tag = tag;
     }
 
-    public String getAuthorName(){
-        return author !=null ? author.getUsername() : "<none>";
+    public String getAuthorName() {
+        return author != null ? author.getUsername() : "<none>";
     }
 }
