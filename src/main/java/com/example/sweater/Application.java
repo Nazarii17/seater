@@ -1,4 +1,3 @@
-
 package com.example.sweater;
 
 import org.springframework.boot.SpringApplication;
