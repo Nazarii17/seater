@@ -13,7 +13,6 @@ import java.util.Set;
 @Data
 @Table(name = "usr")
 public class User implements UserDetails {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -24,6 +23,10 @@ public class User implements UserDetails {
     private String password;
     @Column(name = "active")
     private boolean active;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "activationCode")
+    private String activationCode;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
