@@ -25,7 +25,6 @@ public class User implements UserDetails {
     @Column(name = "password")
     @NotBlank(message = "Password can't be empty!")
     private String password;
-
     @Column(name = "active")
     private boolean active;
     @Column(name = "email")
@@ -34,11 +33,27 @@ public class User implements UserDetails {
     private String email;
     @Column(name = "activationCode")
     private String activationCode;
-
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
+
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Message> messages;
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        User user = (User) o;
+//        return Objects.equals(id, user.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//
+//        return Objects.hash(id);
+//    }
 
     public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
