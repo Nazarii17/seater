@@ -25,9 +25,7 @@ public class User implements UserDetails {
     @Column(name = "password")
     @NotBlank(message = "Password can't be empty!")
     private String password;
-    @Transient
-    @NotBlank(message = "Password confirmation can't be empty!")
-    private String password2;
+
     @Column(name = "active")
     private boolean active;
     @Column(name = "email")
