@@ -23,7 +23,6 @@ public class Message {
     @Length(max = 2048, message = "Message's to long!")
     private String text;
     @Column(name = "tag")
-    @Length(min = 2, message = "Tag's to short!")
     @Length(max = 255, message = "Tag's to long!")
     private String tag;
     @ManyToOne(fetch = FetchType.EAGER)

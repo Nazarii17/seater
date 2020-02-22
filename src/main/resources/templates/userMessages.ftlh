@@ -1,9 +1,9 @@
-<#import "parts/common.ftl" as c>
+<#import "parts/common.ftlh" as c>
 
 <@c.page>
     <#if isCurrentUser>
-        <#include "parts/messageEdit.ftl" />
+        <#include "parts/messageEdit.ftlh" />
     </#if>
 
-    <#include "parts/messageList.ftl" />
+    <#include "parts/messageList.ftlh" />
 </@c.page>

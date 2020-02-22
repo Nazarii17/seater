@@ -10,6 +10,9 @@ import java.util.Properties;
 
 @Configuration
 public class MailConfig {
+    /**
+     * Properties from application.properties
+     */
     @Value("${spring.mail.host}")
     private String host;
 
@@ -40,6 +43,11 @@ public class MailConfig {
     @Value("${mail.smtp.socketFactory.fallback}")
     private String socketFactoryFallback;
 
+    /**
+     * Initialization of Mail sender;
+     *
+     * @return MailSender
+     */
     @Bean
     public JavaMailSender getMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();

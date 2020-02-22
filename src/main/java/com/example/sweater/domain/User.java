@@ -44,15 +44,21 @@ public class User implements UserDetails {
 //    @Override
 //    public boolean equals(Object o) {
 //        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
+//        if (!(o instanceof User)) return false;
 //        User user = (User) o;
-//        return Objects.equals(id, user.id);
+//        return active == user.active &&
+//                Objects.equals(id, user.id) &&
+//                Objects.equals(username, user.username) &&
+//                Objects.equals(password, user.password) &&
+//                Objects.equals(email, user.email) &&
+//                Objects.equals(activationCode, user.activationCode) &&
+//                Objects.equals(roles, user.roles) &&
+//                Objects.equals(messages, user.messages);
 //    }
 //
 //    @Override
 //    public int hashCode() {
-//
-//        return Objects.hash(id);
+//        return Objects.hash(id, username, password, active, email, activationCode, roles, messages);
 //    }
 
     public boolean isAdmin() {
