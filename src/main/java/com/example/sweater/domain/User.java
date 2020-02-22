@@ -41,26 +41,6 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Message> messages;
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (!(o instanceof User)) return false;
-//        User user = (User) o;
-//        return active == user.active &&
-//                Objects.equals(id, user.id) &&
-//                Objects.equals(username, user.username) &&
-//                Objects.equals(password, user.password) &&
-//                Objects.equals(email, user.email) &&
-//                Objects.equals(activationCode, user.activationCode) &&
-//                Objects.equals(roles, user.roles) &&
-//                Objects.equals(messages, user.messages);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id, username, password, active, email, activationCode, roles, messages);
-//    }
-
     public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
     }
